@@ -3,6 +3,13 @@
 A click-through demonstration of the owner-facing console for the AI assistant
 proposed to Mr. Bhaskar Arya, Managing Director, Sparrow Shopfits.
 
+This is the fuller of the two demonstration builds. A smaller one, covering
+meeting coordination only, sits in `essentials/` and runs on its own port so the
+two can be shown side by side. It drops the assistant chat, task follow-up,
+email briefing and the recording of the meeting itself, and produces the meeting
+record when the meeting ends. It is a separate app with its own dependencies, so
+it needs its own `npm install`.
+
 Built to be driven live in a sales meeting. There is no backend and no real
 account behind it. Every figure on screen is demonstration data, and the header
 says so.
