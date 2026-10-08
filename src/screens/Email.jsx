@@ -134,7 +134,7 @@ export default function Email() {
             />
             <ol className="mt-4 space-y-3">
               {[
-                "The sender is on the VIP list Omkar Sawant keeps",
+                "The sender is on the VIP list Onkar keeps",
                 "Outlook itself marks the mail as high importance",
                 "The text contains an action or a deadline aimed at you",
               ].map((r, i) => (

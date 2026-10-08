@@ -284,7 +284,7 @@ function contactAnswer(p) {
     p.id === "rajat"
       ? "They are on the do not call list, so I will message them but never ring them."
       : p.id === "nitin"
-        ? "This number is held until Omkar Sawant releases it, so I have not called it."
+        ? "This number is held until Onkar releases it, so I have not called it."
         : null;
   return {
     text: `${p.name}, ${p.role}${p.kind === "internal" ? "" : ` at ${p.org}`}.`,
