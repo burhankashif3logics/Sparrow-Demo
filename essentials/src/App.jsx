@@ -10,7 +10,6 @@ import Calls from "./screens/Calls";
 import Contacts from "./screens/Contacts";
 import ContactDetail from "./screens/ContactDetail";
 import Scheduled from "./screens/Scheduled";
-import Controls from "./screens/Controls";
 
 const SCREENS = {
   today: Today,
@@ -18,7 +17,6 @@ const SCREENS = {
   calls: Calls,
   contacts: Contacts,
   scheduled: Scheduled,
-  controls: Controls,
 };
 
 function Routed() {
