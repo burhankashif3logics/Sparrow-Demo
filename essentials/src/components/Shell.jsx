@@ -5,7 +5,6 @@ import {
   PhoneCall,
   AddressBook,
   ClockCountdown,
-  SlidersHorizontal,
   Broadcast,
   MagnifyingGlass,
   SidebarSimple,
@@ -18,17 +17,11 @@ import { useApp } from "../state";
 import { Switch, Button } from "./ui";
 
 export const NAV = [
-  { id: "today", label: "Today", icon: SquaresFour, group: "main" },
-  { id: "meetings", label: "Meetings", icon: CalendarDots, group: "main" },
-  { id: "calls", label: "Calls and recordings", icon: PhoneCall, group: "main" },
-  { id: "contacts", label: "Contacts", icon: AddressBook, group: "main" },
-  {
-    id: "scheduled",
-    label: "Scheduled calls",
-    icon: ClockCountdown,
-    group: "main",
-  },
-  { id: "controls", label: "Controls", icon: SlidersHorizontal, group: "admin" },
+  { id: "today", label: "Today", icon: SquaresFour },
+  { id: "meetings", label: "Meetings", icon: CalendarDots },
+  { id: "calls", label: "Calls and recordings", icon: PhoneCall },
+  { id: "contacts", label: "Contacts", icon: AddressBook },
+  { id: "scheduled", label: "Scheduled calls", icon: ClockCountdown },
 ];
 
 const RAIL_OPEN = 240;
@@ -72,9 +65,6 @@ function Rail() {
   const reduce = useReducedMotion();
   const open = railOpen;
 
-  const main = NAV.filter((n) => n.group === "main");
-  const controls = NAV.find((n) => n.id === "controls");
-
   return (
     <motion.aside
       initial={false}
@@ -113,7 +103,7 @@ function Rail() {
 
       <nav className="rail-scroll flex-1 overflow-y-auto overflow-x-visible px-3 py-4">
         <div className="space-y-1">
-          {main.map((n) => (
+          {NAV.map((n) => (
             <NavItem
               key={n.id}
               item={n}
@@ -123,14 +113,6 @@ function Rail() {
             />
           ))}
         </div>
-
-        <div className="my-4 border-t border-rail-line" />
-        <NavItem
-          item={controls}
-          open={open}
-          active={view === "controls"}
-          onClick={() => navigate("controls")}
-        />
       </nav>
 
       {/* Who the console is being used as */}

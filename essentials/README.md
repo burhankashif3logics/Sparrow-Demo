@@ -45,6 +45,9 @@ These are in the fuller build and are not present here, by design:
 - No email briefing. The mailbox is not connected and not read.
 - No recording of the meeting itself. The conversation in the room is never
   captured or transcribed.
+- No settings screen. The timings, limits and rules are fixed at the values
+  agreed during setup, and changing one is a change request rather than
+  something the owner edits himself. The master pause stays in the header.
 
 The assistant's own outbound calls are still recorded and transcribed, because
 that is the evidence of what it said on the owner's behalf. Those are on
@@ -88,14 +91,15 @@ for the second.
    when, and what came back.
 2. **Complete control.** The owner can pause everything from the header, which
    immediately disables every outbound action across the app. Any individual
-   attendee can be overridden. Every rule is readable and editable on Controls,
-   and the limits that cannot be switched off are listed there, locked.
+   attendee can be overridden, and reminders can be stopped for one person or
+   one meeting. What the assistant will never do on his behalf is stated on
+   Today, under "What it is not allowed to do".
 
 ## Things to try in a demo
 
 - Press `/` anywhere to search meetings, people and calls. Arrow keys and enter.
-- Toggle the switch in the header. The banner appears, the Controls panel
-  inverts, and every call and message button goes dead.
+- Toggle the switch in the header. The banner appears and every call and message
+  button across the app goes dead.
 - Collapse the left rail with the button beside the wordmark.
 - Open the live meeting from Today, then open an attendee to reach their contact
   record.
@@ -113,7 +117,8 @@ for the second.
 | Contacts | The Contacts Directory with the do-not-call and approval gates |
 | Contact detail | One person's history, reach rate, meetings and record |
 | Scheduled calls | The sheet-driven outbound calling queue |
-| Controls | Master pause, every timing and limit, connected systems and the locked guardrails |
+
+The master pause sits in the header and works from every screen.
 
 ## Demonstration data
 

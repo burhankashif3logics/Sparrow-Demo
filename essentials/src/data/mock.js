@@ -543,65 +543,6 @@ export const scheduledCalls = [
   },
 ];
 
-/* -------------------------------------------------------------- control --- */
-
-export const controls = [
-  {
-    group: "Invite responses",
-    items: [
-      {
-        label: "Call an attendee who has not responded",
-        value: "2 hours after the invite, or 1 hour before the meeting",
-      },
-      { label: "Treat a tentative response as", value: "Not accepted" },
-      { label: "Skip the response call when the meeting is within", value: "1 hour" },
-    ],
-  },
-  {
-    group: "Joining the meeting",
-    items: [
-      { label: "First call wave", value: "At the meeting start time" },
-      { label: "Second call wave", value: "5 minutes past the start time" },
-      { label: "Tell the MD the meeting is ready", value: "Call and WhatsApp" },
-      { label: "Escalate missing attendees to the MD and EA", value: "10 minutes past" },
-      { label: "Optional attendees hold up the ready notification", value: "No" },
-    ],
-  },
-  {
-    group: "Calling limits",
-    items: [
-      { label: "Maximum attempts per attendee", value: "2" },
-      { label: "Calling window", value: "08:00 to 21:00 IST" },
-      { label: "Languages", value: "English, Hindi, Hinglish" },
-      { label: "Do not call list", value: "1 contact" },
-    ],
-  },
-];
-
-/* These cannot be switched off from the console. That is the point of showing them. */
-export const guardrails = [
-  {
-    label: "Identifies itself as an assistant on every call",
-    detail:
-      "The opening line names the assistant and says it is calling for Mr. Bhaskar Arya. This cannot be turned off.",
-  },
-  {
-    label: "Cannot approve prices, payments or contracts",
-    detail:
-      "If asked for any commitment, the call is summarised and handed to the MD on WhatsApp. The assistant has no authority to agree to anything.",
-  },
-  {
-    label: "First call to a new external contact needs the EA to approve",
-    detail:
-      "External numbers added to the Contacts Directory stay on hold until Omkar Sawant releases them.",
-  },
-  {
-    label: "Every call is recorded, transcribed and kept for 90 days",
-    detail:
-      "Recordings and transcripts are readable here and exportable. Nothing is deleted inside the retention window.",
-  },
-];
-
 /* ------------------------------------------------------- day at a glance --- */
 
 export const todayKpis = [
