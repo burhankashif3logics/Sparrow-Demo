@@ -30,8 +30,8 @@ const commands = [
     at: "08:12",
     from: "Bhaskar Arya",
     voice: true,
-    text: "Tuesday 2 baje Anurag aur Omkar ke saath P&L meeting lagao",
-    read: "Schedule a meeting, Tuesday 14:00, with Anurag Deshpande and Omkar Sawant",
+    text: "Tuesday 2 baje Anurag aur Onkar ke saath P&L meeting lagao",
+    read: "Schedule a meeting, Tuesday 14:00, with Anurag Deshpande and Onkar",
     result: "clash",
     steps: [
       "Both names matched in the Contacts Directory",
@@ -41,7 +41,7 @@ const commands = [
   },
   {
     at: "09:04",
-    from: "Omkar Sawant",
+    from: "Onkar",
     voice: false,
     text: "Schedule handover checklist with Farida today 6 pm, add Prakash",
     read: "Schedule a meeting, today 18:00, with Farida Merchant and Prakash Iyer",
@@ -256,7 +256,7 @@ export default function Meetings() {
             </div>
             <div className="border-t border-line bg-paper-2 px-6 py-3.5">
               <p className="text-[12px] leading-relaxed text-ink-2">
-                Only your number and Omkar Sawant's number can instruct the
+                Only your number and Onkar's number can instruct the
                 assistant. Anything ambiguous comes back as a question before a
                 meeting is created or cancelled.
               </p>

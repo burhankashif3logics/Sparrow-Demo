@@ -37,15 +37,15 @@ export const people = {
     email: "bhaskar@sparrowshopfits.com",
     initials: "BA",
   },
-  omkar: {
-    id: "omkar",
-    name: "Omkar Sawant",
+  onkar: {
+    id: "onkar",
+    name: "Onkar",
     role: "Executive Assistant",
     org: "Sparrow Shopfits",
     kind: "internal",
     phone: "+91 98204 17736",
-    email: "omkar.s@sparrowshopfits.com",
-    initials: "OS",
+    email: "onkar.s@sparrowshopfits.com",
+    initials: "O",
   },
   anurag: {
     id: "anurag",
@@ -194,7 +194,7 @@ export const meetings = [
       { id: "rajat", required: true, rsvp: "accepted", joined: "11:00" },
       { id: "meenal", required: true, rsvp: "accepted", joined: "11:02" },
       { id: "prakash", required: true, rsvp: "accepted", joined: "10:58" },
-      { id: "omkar", required: false, rsvp: "accepted", joined: "11:01" },
+      { id: "onkar", required: false, rsvp: "accepted", joined: "11:01" },
     ],
   },
   {
@@ -268,7 +268,7 @@ export const ledger = [
     channel: "escalation",
     title: "MD and EA notified: Suresh Patil unreachable",
     detail:
-      "Two call attempts failed. WhatsApp sent to Bhaskar Arya and Omkar Sawant with each attendee's status.",
+      "Two call attempts failed. WhatsApp sent to Bhaskar Arya and Onkar with each attendee's status.",
     meeting: "m3",
   },
   {
@@ -352,7 +352,7 @@ export const ledger = [
     channel: "sheet",
     title: "Contacts Directory synced",
     detail:
-      "Two phone numbers updated from the sheet Omkar Sawant maintains. One contact added.",
+      "Two phone numbers updated from the sheet Onkar maintains. One contact added.",
   },
 ];
 
@@ -695,7 +695,7 @@ export const guardrails = [
   {
     label: "First call to a new external contact needs the EA to approve",
     detail:
-      "External numbers added to the Contacts Directory stay on hold until Omkar Sawant releases them.",
+      "External numbers added to the Contacts Directory stay on hold until Onkar releases them.",
   },
   {
     label: "Every call is recorded, transcribed and kept for 90 days",
@@ -757,7 +757,7 @@ export const meetingMessages = {
     { at: "13:50", to: "4 attendees", kind: "Ten minute reminder", state: "delivered" },
     {
       at: "14:11",
-      to: "Bhaskar Arya, Omkar Sawant",
+      to: "Bhaskar Arya, Onkar",
       kind: "Escalation: Suresh Patil unreachable",
       state: "read",
     },

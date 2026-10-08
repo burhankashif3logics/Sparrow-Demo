@@ -59,7 +59,7 @@ The sign-in screen offers two accounts. Pick either one to see the console as
 that person sees it:
 
 - **Bhaskar Arya**, Managing Director. Can schedule, cancel, override and pause.
-- **Omkar Sawant**, Executive Assistant. Can schedule, cancel and release new
+- **Onkar**, Executive Assistant. Can schedule, cancel and release new
   contacts for calling.
 
 Any password works.

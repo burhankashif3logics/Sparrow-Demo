@@ -26,10 +26,10 @@ export const ACCOUNTS = {
     can: ["schedule", "cancel", "override", "pause", "release"],
   },
   ea: {
-    id: "omkar",
+    id: "onkar",
     role: "Executive Assistant",
-    label: "Omkar Sawant",
-    email: "omkar.s@sparrowshopfits.com",
+    label: "Onkar",
+    email: "onkar.s@sparrowshopfits.com",
     can: ["schedule", "cancel", "release"],
   },
 };
