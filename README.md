@@ -39,11 +39,41 @@ Any password works.
    attendee can be overridden. Every rule is readable and editable on Controls,
    and the limits that cannot be switched off are listed there, locked.
 
+## Ask the assistant
+
+The button in the bottom right opens a chat panel that reads the same data as
+the rest of the console. It is a real query engine over `src/data/mock.js`, not
+a script: it resolves names, reads the live meeting state and counts calls and
+tasks, so the answers always match what the screens show.
+
+Things it answers well:
+
+- "Who has not joined yet?"
+- "Where is Suresh?" or any other name
+- "What is next on my calendar?"
+- "Which tasks are delayed?"
+- "How many calls today?"
+- "What is Farida's phone number?"
+
+Two behaviours worth demonstrating:
+
+- Ask it to **approve a discount** and it refuses, the same way the voice agent
+  does on a call, and offers to put the request in front of the owner instead.
+- Ask it something outside the record, such as the weather, and it says it does
+  not have that rather than inventing an answer.
+
+The panel header has a **size toggle** and an **open in a separate window**
+button. The popped-out window is a full-page assistant that can sit on a second
+screen; actions in it, such as "Open the meeting", drive the console window that
+opened it. The pause state is shared between the two windows, so pausing in the
+console stops the popped-out assistant from acting too.
+
 ## Things to try in a demo
 
 - Press `/` anywhere to search meetings, people and calls. Arrow keys and enter.
 - Toggle the switch in the header. The banner appears, the Controls panel
-  inverts and every call and message button in the app goes dead.
+  inverts, every call and message button goes dead, and the assistant will
+  answer questions but refuse to place a call.
 - Collapse the left rail with the button beside the wordmark.
 - Open the live meeting, then open an attendee to reach their contact record.
 - On Task follow-up, expand "Show the full exchange" on the delayed task.

@@ -88,7 +88,7 @@ function Rail() {
       transition={
         reduce ? { duration: 0 } : { duration: 0.28, ease: [0.16, 1, 0.3, 1] }
       }
-      className="hidden shrink-0 flex-col bg-rail lg:flex"
+      className="sticky top-0 hidden h-[100dvh] shrink-0 flex-col overflow-hidden bg-rail lg:flex"
     >
       <div
         className={`flex h-[60px] shrink-0 items-center border-b border-rail-line ${

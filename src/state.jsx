@@ -1,4 +1,13 @@
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+
+const PAUSE_KEY = "sparrow.paused";
 
 /*
   One store for everything the console can actually do. Keeping it here is why
@@ -30,7 +39,34 @@ export function AppState({ children }) {
   const [view, setView] = useState("today");
   const [detail, setDetail] = useState(null); // { type, id }
   const [railOpen, setRailOpen] = useState(true);
-  const [paused, setPaused] = useState(false);
+  const [paused, setPausedRaw] = useState(() => {
+    try {
+      return window.localStorage.getItem(PAUSE_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
+
+  /*
+    Pause is mirrored through localStorage so the console and a popped-out
+    assistant window agree on whether the assistant is allowed to act.
+  */
+  const setPaused = useCallback((next) => {
+    setPausedRaw(next);
+    try {
+      window.localStorage.setItem(PAUSE_KEY, next ? "1" : "0");
+    } catch {
+      /* private mode or blocked storage: the window just keeps its own state */
+    }
+  }, []);
+
+  useEffect(() => {
+    const onStorage = (e) => {
+      if (e.key === PAUSE_KEY) setPausedRaw(e.newValue === "1");
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
   const [searchOpen, setSearchOpen] = useState(false);
   const [toasts, setToasts] = useState([]);
 
@@ -83,7 +119,7 @@ export function AppState({ children }) {
     setView("today");
     setDetail(null);
     setPaused(false);
-  }, []);
+  }, [setPaused]);
 
   const value = useMemo(
     () => ({

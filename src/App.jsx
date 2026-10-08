@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import Shell from "./components/Shell";
 import CommandPalette from "./components/CommandPalette";
+import Assistant from "./components/Assistant";
 import { Toasts } from "./components/ui";
 import { AppState, useApp } from "./state";
 import Login from "./screens/Login";
@@ -25,6 +27,10 @@ const SCREENS = {
   controls: Controls,
 };
 
+/* The assistant opened in its own window renders on its own. */
+const isAssistantWindow = () =>
+  new URLSearchParams(window.location.search).has("assistant");
+
 function Routed() {
   const { view, detail } = useApp();
 
@@ -36,7 +42,20 @@ function Routed() {
 }
 
 function Root() {
-  const { account, toasts, dismissToast } = useApp();
+  const { account, toasts, dismissToast, navigate, open } = useApp();
+
+  /* A popped-out assistant can drive this window. */
+  useEffect(() => {
+    const onMessage = (e) => {
+      if (e.origin !== window.location.origin) return;
+      const go = e.data?.source === "sparrow-assistant" ? e.data.go : null;
+      if (!go) return;
+      if (go.type === "view") navigate(go.id);
+      else open(go.type, go.id);
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, [navigate, open]);
 
   if (!account) {
     return (
@@ -53,15 +72,25 @@ function Root() {
         <Routed />
       </Shell>
       <CommandPalette />
+      <Assistant />
+      <Toasts toasts={toasts} onDismiss={dismissToast} />
+    </>
+  );
+}
+
+function AssistantWindow() {
+  const { toasts, dismissToast } = useApp();
+  return (
+    <>
+      <Assistant standalone />
       <Toasts toasts={toasts} onDismiss={dismissToast} />
     </>
   );
 }
 
 export default function App() {
+  const standalone = isAssistantWindow();
   return (
-    <AppState>
-      <Root />
-    </AppState>
+    <AppState>{standalone ? <AssistantWindow /> : <Root />}</AppState>
   );
 }

@@ -270,7 +270,8 @@ export function Empty({ icon: Icon, title, detail, action }) {
 export function Toasts({ toasts, onDismiss }) {
   const reduce = useReducedMotion();
   return (
-    <div className="pointer-events-none fixed bottom-5 right-5 z-50 flex w-[320px] max-w-[calc(100vw-40px)] flex-col gap-2">
+    /* Bottom left: the assistant launcher and its panel own the bottom right. */
+    <div className="pointer-events-none fixed bottom-5 left-5 z-50 flex w-[320px] max-w-[calc(100vw-40px)] flex-col gap-2">
       <AnimatePresence initial={false}>
         {toasts.map((t) => (
           <motion.div
