@@ -251,9 +251,9 @@ export default function Controls() {
                       me: account.id === "bhaskar",
                     },
                     {
-                      who: "Omkar Sawant",
+                      who: "Onkar",
                       what: "Schedule, cancel, release new contacts",
-                      me: account.id === "omkar",
+                      me: account.id === "onkar",
                     },
                     {
                       who: "Anurag Deshpande",

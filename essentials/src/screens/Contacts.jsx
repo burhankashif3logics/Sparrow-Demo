@@ -61,7 +61,7 @@ export default function Contacts() {
     <>
       <PageHead
         title="Contacts"
-        meta="The assistant reads names, emails and phone numbers from one Google Sheet that Omkar Sawant keeps. It never invents a number, and it never guesses between two people with the same name."
+        meta="The assistant reads names, emails and phone numbers from one Google Sheet that Onkar keeps. It never invents a number, and it never guesses between two people with the same name."
         action={
           <Button
             icon={ArrowUpRight}
@@ -231,10 +231,10 @@ export default function Contacts() {
                 className="mt-[2px] shrink-0 text-wait-ink"
               />
               <p className="max-w-[86ch] text-[12px] leading-relaxed text-ink-2">
-                A new client or vendor number stays on hold until Omkar Sawant
+                A new client or vendor number stays on hold until Onkar
                 releases it, so the assistant never cold calls someone added to
                 the sheet by mistake. If an attendee on an invite has no number
-                at all, Omkar is told rather than the invite being skipped
+                at all, Onkar is told rather than the invite being skipped
                 quietly.
               </p>
             </div>
